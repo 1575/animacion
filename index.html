@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Animaci&oacute;n</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link href="animated/animate.css" rel="stylesheet" type="text/css">
+</head>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+<body>
+
+<!---img--fondo-->
+<img id="bg" src="img/fondo.jpg" alt="Fondo" />
+<!--animacion-->
+<div class="nube1"><img src="img/nube1.png" class="img-responsive"></div>
+<div class="globo"><a href=""><img src="img/avion.png" class="img-responsive"></a></div>
+<div class="nave"><img src="img/paracaidista.png"></div>
+<!------------>
+
+<header>
+  
+</header>
+
+ <div class="spbox col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
+ 
+ </div>
+ 
+<div class="animated flipInY esperar1 caja">
+<h1 class="animated flipInX esperar2">ANIMACION PERSONALIZADA</h1>
+
+
+<div  class="logo col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div id="girar">
+    <img src="img/rueda.png" alt="rueda-web">
+    </div>
+
+    <div class="nogira">
+    <img src="img/logo.png" alt="jonathanaravena.cl"/><bR>
+    </div>
+</div>
+
+
+<style>
+/****RUEDA GIRAR***/
+.logo{
+	margin-left:44px;
+	padding-left:40px;
+	padding-top:95px;
+	
+}
+#girar{position:absolute;width:225px;height:225px;border-radius:150px;}
+.nogira{position:relative;margin:77px 0px 0px 73px;width:80px;height:80px;border-radius:50px;}
+.logo{padding-left:40px!important;margin-top:-64PX;text-align:center;}
+.marca{padding-left:7px;font-family: 'Abel', sans-serif; font-size:18px;}
+    .esperar1{ 
+    -moz-animation-delay:1s;
+    -ms-animation-delay:1s;
+    -o-animation-delay:1s;
+    -webkit-animation-delay:1s;
+    }
+	.esperar2{ 
+    -moz-animation-delay:2s;
+    -ms-animation-delay:2s;
+    -o-animation-delay:2s;
+    -webkit-animation-delay:2s;
+    }
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+    </style>
+<!---GIRAR---->
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/jQueryRotateCompressed.js"></script>
+<script type="text/javascript">
+var angulo = 0;
+setInterval(function(){
+      angulo+=2; //velocidad
+     $("#girar").rotate(angulo);
+},10);
+</script>
+<!---fin girar--->
+
+
+</div>
+
+
+</body>
+
+<!---iamgen de fondo--->
+<style>
+#bg {position: fixed;z-index: -1;top: 0;left: 0;width: 100%;}
+</style>
+<script>
+function updateBackground() {
+screenWidth = $(window).width();
+screenHeight = $(window).height();
+var bg = jQuery("#bg");
+ 
+// Proporcion horizontal/vertical. En este caso la imagen es cuadrada
+ratio = 1;
+ 
+if (screenWidth/screenHeight > ratio) {
+$(bg).height("auto");
+$(bg).width("100%");
+} else {
+$(bg).width("auto");
+$(bg).height("100%");
+}
+ 
+// Si a la imagen le sobra anchura, la centramos a mano
+if ($(bg).width() > 0) {
+$(bg).css('left', (screenWidth - $(bg).width()) / 2);
+}
+}
+$(document).ready(function() {
+// Actualizamos el fondo al cargar la pagina
+updateBackground();
+$(window).bind("resize", function() {
+// Y tambien cada vez que se redimensione el navegador
+updateBackground();
+});
+});
+</script>
+</html>
+
